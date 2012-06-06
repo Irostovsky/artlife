@@ -1,2 +1,4 @@
 <h1>Admin Section</h1>
 You are logged as <%= current_user.email %>
+<%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+
