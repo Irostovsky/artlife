@@ -7,6 +7,8 @@ gem 'rails', '3.2.5'
 
 gem 'mysql2'
 gem 'jquery-rails'
+gem 'devise'
+gem 'factory_girl_rails' # move it to staging after staging will appear
 
 
 # Gems used only for assets and not required
