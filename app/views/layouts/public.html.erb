@@ -1,4 +1,6 @@
 <%= render :layout => 'layouts/base' do %>
+  <%= render 'share/admin_menu' if current_user %>
+
   <h1>Art Life</h1>
   <%= render 'share/flash_message', :content => notice, :clazz => 'alert alert-success' %>
   <%= render 'share/flash_message', :content => alert, :clazz => 'alert alert-error' %>
