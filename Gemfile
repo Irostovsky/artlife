@@ -6,6 +6,7 @@ gem 'rails', '3.2.5'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
+gem 'jquery-rails'
 
 
 # Gems used only for assets and not required
@@ -20,7 +21,31 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+
+group :development do
+  gem 'mongrel', '>= 1.2.0.pre2'
+  gem 'capistrano'
+  gem 'capistrano-ext'
+  gem 'rvm-capistrano'
+end
+
+group :development, :test, :cucumber do
+  gem 'rspec-rails'
+  gem 'mocha'
+  gem 'shoulda-matchers'
+  gem 'fakeweb'
+  gem 'faker'
+end
+
+group :cucumber do
+  gem 'cucumber'
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'email_spec'
+  gem 'selenium-webdriver', '= 2.13.0'
+  # gem 'capybara-webkit'
+  gem 'fakeweb'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
