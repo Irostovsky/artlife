@@ -1,0 +1,6 @@
+<% if content %>
+  <%= content_tag :div, :class => clazz do %>
+    <%= link_to '×', '#', :class => "close", "data-dismiss" => "alert", :title => 'close' %>
+    <%= content %>
+  <% end -%>
+<% end -%>

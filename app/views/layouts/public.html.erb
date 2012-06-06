@@ -1,3 +1,6 @@
 <%= render :layout => 'layouts/base' do %>
+  <h1>Art Life</h1>
+  <%= render 'share/flash_message', :content => notice, :clazz => 'alert alert-success' %>
+  <%= render 'share/flash_message', :content => alert, :clazz => 'alert alert-error' %>
   <%= yield %>
 <% end -%>

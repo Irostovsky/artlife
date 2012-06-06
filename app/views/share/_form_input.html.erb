@@ -1,0 +1,14 @@
+<% column = input[1] %>
+<% errors = resource.errors[column] %>
+<% errors += local_assigns.has_key?(:error_columns) ? error_columns.map{|col| resource.errors[col]}.flatten : [] %>
+<div class="clearfix control-group
+  <%= group_class if local_assigns.has_key?(:group_class) -%>
+  <%= 'error' if errors.any? %>">
+  <%= f.label column, local_assigns[:custom_label], :class => 'control-label' %>
+  <div class="controls">
+    <%= f.send *input %>
+    <span class="help-inline">
+        <%= errors.join(' and ') %>
+    </span>
+  </div>
+</div>
