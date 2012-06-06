@@ -1,6 +1,12 @@
 Artlife::Application.routes.draw do
   get "home/index"
+
+  namespace :admin do
+    resources :home, :only => :index
+  end
+
   root :to => 'home#index'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
