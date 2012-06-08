@@ -1,9 +1,9 @@
 class Admin::PropertiesController < Admin::BaseController
 
   before_filter :find_property, :only => [:edit, :update]
-  
+
   def index
-    @properties = Property.all
+    @properties = Property.all_by_keys
   end
 
   def edit
@@ -16,11 +16,11 @@ class Admin::PropertiesController < Admin::BaseController
       render :edit
     end
   end
-  
+
 private
-  
+
   def find_property
-    @property = Property.find_by_code params[:id]
+    @property = Property.find_or_create_by_code params[:id]
     raise "No property found with code: #{params[:id]}" unless @property
   end
 end
