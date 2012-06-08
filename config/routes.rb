@@ -1,5 +1,7 @@
 Artlife::Application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
+
   get "home/index"
 
   devise_for :users
@@ -7,6 +9,8 @@ Artlife::Application.routes.draw do
     resources :home, :only => :index
     resources :properties, :only => [:index, :update, :edit]
   end
+
+  mount Ckeditor::Engine => "/ckeditor"
 
   root :to => 'home#index'
 

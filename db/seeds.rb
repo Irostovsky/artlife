@@ -10,3 +10,4 @@ Property.destroy_all
 
 FactoryGirl.create :user
 FactoryGirl.create :property, :code => 'contacts', :view => "text", :value => 'Tel: 123-123-123'
+FactoryGirl.create :property, :code => 'skype_name', :view => "string", :value => 'art_life_skype'

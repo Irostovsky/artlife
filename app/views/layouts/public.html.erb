@@ -2,7 +2,8 @@
   <%= render 'share/admin_menu' if current_user %>
 
   <h1>Art Life</h1>
-  <%= Property.value_by_code(:contacts) %>
+  <%= property(:contacts) %>
+  <%= property(:skype_name) %>
   <%= render 'share/flash_message', :content => notice, :clazz => 'alert alert-success' %>
   <%= render 'share/flash_message', :content => alert, :clazz => 'alert alert-error' %>
   <%= yield %>

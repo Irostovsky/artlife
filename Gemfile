@@ -10,6 +10,8 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'factory_girl_rails' # move it to staging after staging will appear
 gem "twitter-bootstrap-rails"
+gem "ckeditor", "3.7.1"
+gem "paperclip"
 
 # Gems used only for assets and not required
 # in production environments by default.

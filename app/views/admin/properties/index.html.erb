@@ -12,7 +12,7 @@
     <% @properties.each do |property| %>
       <tr>
         <td><%= property.code %></td>
-        <td><%= property.value %></td>
+        <td><%= raw property.value %></td>
         <td><%= link_to raw("<i class='icon-pencil'></i>"), edit_admin_property_path(property) %></td>
       </tr>
     <% end -%>

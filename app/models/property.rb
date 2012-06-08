@@ -17,7 +17,7 @@ class Property < ActiveRecord::Base
     when :string
       :text_field
     when :text
-      :text_area
+      :cktext_area
     end
   end
 end
