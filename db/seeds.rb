@@ -5,5 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+User.destroy_all
+Property.destroy_all
 
 FactoryGirl.create :user
+FactoryGirl.create :property, :code => 'contacts', :view => "text", :value => 'Tel: 123-123-123'

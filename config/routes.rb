@@ -5,6 +5,7 @@ Artlife::Application.routes.draw do
   devise_for :users
   namespace :admin do
     resources :home, :only => :index
+    resources :properties, :only => [:index, :update, :edit]
   end
 
   root :to => 'home#index'

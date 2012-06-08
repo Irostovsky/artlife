@@ -1,0 +1,21 @@
+<h3>Properties</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Value</th>
+      <th>Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @properties.each do |property| %>
+      <tr>
+        <td><%= property.code %></td>
+        <td><%= property.value %></td>
+        <td><%= link_to raw("<i class='icon-pencil'></i>"), edit_admin_property_path(property) %></td>
+      </tr>
+    <% end -%>
+  </tbody>
+</table>
+
