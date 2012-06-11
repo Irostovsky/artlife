@@ -1,5 +1,10 @@
 class Property < ActiveRecord::Base
   attr_accessible :code, :value, :view
+  translates :value
+  class Translation
+    attr_accessible :locale
+  end
+
   CODES = {
       :contacts => :text,
       :skype_name => :string
