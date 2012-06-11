@@ -14,6 +14,7 @@ gem "ckeditor", "3.7.1"
 gem "paperclip"
 gem 'rails-i18n'
 gem "globalize3"
+gem 'batch_translations'
 
 # Gems used only for assets and not required
 # in production environments by default.

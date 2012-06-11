@@ -4,7 +4,8 @@
   <thead>
     <tr>
       <th>Code</th>
-      <th>Value</th>
+      <th>Value_en</th>
+      <th>Value_cn</th>
       <th>Edit</th>
     </tr>
   </thead>
@@ -12,7 +13,9 @@
     <% @properties.each do |property| %>
       <tr>
         <td><%= property.code %></td>
-        <td><%= raw property.value %></td>
+        <% Artlife::Application.config.locales.each do |locale| %>
+          <td><%= raw property.value_by_locale locale %></td>
+        <% end -%>
         <td><%= link_to raw("<i class='icon-pencil'></i>"), edit_admin_property_path(property) %></td>
       </tr>
     <% end -%>
