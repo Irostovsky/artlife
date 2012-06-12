@@ -10,19 +10,20 @@ class Property < ActiveRecord::Base
   end
 
   def value_by_locale(locale)
-    self.translations.find_by_locale(locale).value
+    self.translations.find_by_locale(locale).try :value
   end
 
   CODES = {
       :contacts => :text,
-      :skype_name => :string
+      :skype_name => :string,
+      :icq_name => :string
       }
 
   validates :code, :view, :presence => true
   validates :code, :uniqueness => true
 
   def self.value_by_code(code)
-    self.find_by_code(code).value
+    self.find_by_code(code).try :value
   end
 
   def self.all_by_keys
