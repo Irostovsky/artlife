@@ -16,7 +16,8 @@ class Property < ActiveRecord::Base
   CODES = {
       :contacts => :text,
       :skype_name => :string,
-      :icq_name => :string
+      :icq_name => :string,
+      :about_us_page => :text
       }
 
   validates :code, :view, :presence => true
