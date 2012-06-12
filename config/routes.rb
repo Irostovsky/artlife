@@ -3,7 +3,7 @@ Artlife::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
   get "home/index"
-
+  resources :locales, :only => :update
   devise_for :users
   namespace :admin do
     resources :home, :only => :index

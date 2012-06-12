@@ -22,7 +22,7 @@ class Property < ActiveRecord::Base
   validates :code, :uniqueness => true
 
   def self.value_by_code(code)
-    self.find_by_code(code).try(:value)
+    self.find_by_code(code).value
   end
 
   def self.all_by_keys
