@@ -8,4 +8,8 @@ module ApplicationHelper
     end
   end
 
+  def new_edit_legend object
+    "#{object.new_record? ? 'Create' : 'Edit'} #{object.class.name.downcase}"
+  end
+
 end

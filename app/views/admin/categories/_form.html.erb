@@ -1,0 +1,14 @@
+<%= form_for [:admin, @category] do |f| %>
+  <fieldset>
+    <legend><%= new_edit_legend(@category) %></legend>
+    <% Artlife::Application.config.locales.each do |locale| %>
+      <%= f.globalize_fields_for locale do |g| %>
+        <%= render "share/form_input", :f => g, :resource => @category, :input => [:text_field, :name], :custom_label => "Name_#{locale}" %>
+      <% end %>
+    <% end -%>
+    <div class="form-actions">
+      <%= f.submit "Save", :class => 'btn btn-primary' %>
+      <%= link_to "Cancel", admin_categories_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>

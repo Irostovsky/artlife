@@ -8,6 +8,7 @@ Artlife::Application.routes.draw do
   namespace :admin do
     resources :home, :only => :index
     resources :properties, :only => [:index, :update, :edit]
+    resources :categories
   end
 
   mount Ckeditor::Engine => "/ckeditor"

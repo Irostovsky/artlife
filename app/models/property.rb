@@ -1,17 +1,7 @@
 class Property < ActiveRecord::Base
   attr_accessible :code, :value, :view
   translates :value
-
-  accepts_nested_attributes_for :translations
-  attr_accessible :translations_attributes
-
-  class Translation
-    attr_accessible :locale, :value
-  end
-
-  def value_by_locale(locale)
-    self.translations.find_by_locale(locale).try :value
-  end
+  include TranslatedModel
 
   CODES = {
       :contacts => :text,

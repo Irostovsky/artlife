@@ -1,0 +1,25 @@
+<h3>Categories</h3>
+
+<%= link_to "New category", new_admin_category_path %>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name_en</th>
+      <th>Name_cn</th>
+      <th>Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <% Artlife::Application.config.locales.each do |locale| %>
+          <td><%= raw category.name_by_locale locale %></td>
+        <% end -%>
+        <td>
+          <%= link_to raw("<i class='icon-pencil'></i>"), edit_admin_category_path(category) %>
+          <%= link_to raw("<i class='icon-remove'></i>"), admin_category_path(category), :method => :delete, :confirm => "Are you sure?" %>
+        </td>
+      </tr>
+    <% end -%>
+  </tbody>
+</table>
