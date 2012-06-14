@@ -21,11 +21,13 @@ some_cn_text = "它是在2012年1月举行的最后的北部白犀牛委员会�
 
 tauwa，六岁的南白，是二月23日提出的第一个。她冲过来，成箱的领导和移动使用我们的车易位，艾拉，小博马。她先是保存在观察相邻控股博马的镇定剂的作用而脱落。后来，她被释放参加罗津，而逊尼派被保存在一个单独的博马两天。这是为了确保，苏尼没有试图接近她，而在她的系统仍然是麻醉。虽然该计划是与罗津Tauwa债券几天后，她似乎急于实现我们的团队。他们决定在第二个南部白人女性从大博马移动。"
 
+some_en_text = "Tenetur sed consequatur sequi. Accusamus consectetur aspernatur. Ut architecto alias. Ipsam sequi voluptatem odit. - Laborum impedit soluta. Consequuntur ut ea. Natus rerum veritatis. - Ad odit iusto ea. Occaecati dolor nihil dignissimos id. Reprehenderit enim nostrum totam est sed. "
+
 FactoryGirl.create :user
 create_translated :property, :code => 'contacts', :view => "text", :value => ['Tel: 123-123-123', 'TEL: 123-123-123']
 create_translated :property, :code => 'skype_name', :view => "string", :value => ['art_life_skype', 'art_life_skype_cn' ]
 create_translated :property, :code => 'icq_name', :view => "string", :value => ['art_life_icq', 'art_life_icq_cn']
-create_translated :property, :code => 'about_us_page', :view => "text", :value => [Faker::Lorem.paragraphs, some_cn_text]
+create_translated :property, :code => 'about_us_page', :view => "text", :value => [some_en_text, some_cn_text]
 
 ["Projects", "Singers", "Life-band", "Dance"].each do |name|
   create_translated :category, :name => [name, "#{name}_cn"]
