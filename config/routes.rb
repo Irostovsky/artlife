@@ -3,6 +3,8 @@ Artlife::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
   get "home/index"
+  match "/admin" => "admin/home#index"
+  match "/categories" => "home#index"
   resources :locales, :only => :update
   devise_for :users
   resources :categories, :only => :show
