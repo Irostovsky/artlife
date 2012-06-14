@@ -9,7 +9,7 @@ gem 'mysql2'
 gem 'jquery-rails'
 gem 'devise'
 gem 'factory_girl_rails' # move it to staging after staging will appear
-gem "twitter-bootstrap-rails"
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem "ckeditor", "3.7.1"
 gem "paperclip"
 gem 'rails-i18n'
