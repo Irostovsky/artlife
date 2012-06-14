@@ -1,7 +1,7 @@
 <h3>Categories</h3>
 
 <%= link_to "New category", new_admin_category_path %>
-<table class="table table-bordered">
+<table class="table table-bordered categories">
   <thead>
     <tr>
       <th>Name_en</th>
@@ -9,9 +9,9 @@
       <th>Edit</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody update-order-url = "<%= admin_category_position_path("CATEGORY_ID", "POSITION") %>">
     <% @categories.each do |category| %>
-      <tr>
+      <tr category-id="<%= category.id %>">
         <% Artlife::Application.config.locales.each do |locale| %>
           <td><%= raw category.name_by_locale locale %></td>
         <% end -%>

@@ -2,7 +2,7 @@ class Admin::CategoriesController < Admin::BaseController
   before_filter :find_category, :only => [:edit, :update, :destroy]
   
   def index
-    @categories = Category.all
+    @categories = Category.by_position
   end
   
   def new
