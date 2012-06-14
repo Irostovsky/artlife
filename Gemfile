@@ -16,6 +16,7 @@ gem 'rails-i18n'
 gem "globalize3"
 gem 'batch_translations'
 gem "acts_as_list-rails3", "~> 0.0.4"
+gem "friendly_id", "~> 4.0.1"
 
 # Gems used only for assets and not required
 # in production environments by default.
