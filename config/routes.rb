@@ -5,6 +5,8 @@ Artlife::Application.routes.draw do
   get "home/index"
   resources :locales, :only => :update
   devise_for :users
+  resources :categories, :only => :show
+
   namespace :admin do
     resources :home, :only => :index
     resources :properties, :only => [:index, :update, :edit]

@@ -1,0 +1,4 @@
+<%= link_to t(:about_us), root_path, :class => "#{'current' unless @category}" %>
+<% Category.by_position.each do |category| %>
+  <%= link_to category.name, category, :class => "#{'current' if @category == category}" %>
+<% end -%>
