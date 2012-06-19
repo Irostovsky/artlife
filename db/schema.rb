@@ -11,7 +11,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120614050052) do
+ActiveRecord::Schema.define(:version => 20120619081511) do
+
+  create_table "artist_translations", :force => true do |t|
+    t.integer  "artist_id"
+    t.string   "locale"
+    t.text     "biography"
+    t.string   "country"
+    t.string   "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "artist_translations", ["artist_id"], :name => "index_artist_translations_on_artist_id"
+  add_index "artist_translations", ["locale"], :name => "index_artist_translations_on_locale"
+
+  create_table "artists", :force => true do |t|
+    t.string   "title"
+    t.string   "country"
+    t.text     "biography"
+    t.integer  "position"
+    t.integer  "category_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "slug"
+  end
+
+  add_index "artists", ["slug"], :name => "index_artists_on_slug", :unique => true
 
   create_table "categories", :force => true do |t|
     t.string   "name"

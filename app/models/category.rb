@@ -1,5 +1,7 @@
 class Category < ActiveRecord::Base
   attr_accessible :name
+  has_many :artists
+
   translates :name
   include TranslatedModel
   acts_as_list
