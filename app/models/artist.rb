@@ -1,5 +1,5 @@
 class Artist < ActiveRecord::Base
-  attr_accessible :biography, :country, :position, :title
+  attr_accessible :biography, :country, :position, :title, :category, :category_id
   belongs_to :category
 
   translates :biography, :country, :title

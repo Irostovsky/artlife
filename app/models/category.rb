@@ -1,6 +1,6 @@
 class Category < ActiveRecord::Base
   attr_accessible :name
-  has_many :artists
+  has_many :artists, :dependent => :destroy
 
   translates :name
   include TranslatedModel
