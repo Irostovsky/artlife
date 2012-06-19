@@ -1,14 +1,14 @@
 class Admin::CategoriesController < Admin::BaseController
-  before_filter :find_category, :only => [:edit, :update, :destroy]
-  
+  before_filter :find_category, :only => [:edit, :update, :destroy, :show]
+
   def index
     @categories = Category.by_position
   end
-  
+
   def new
     @category = Category.new
   end
-  
+
   def create
     @category = Category.new params[:category]
     if @category.save
@@ -33,11 +33,15 @@ class Admin::CategoriesController < Admin::BaseController
     @category.destroy
     redirect_to admin_categories_path, :notice => 'Category deleted!'
   end
-  
+
+  def show
+    @artists = @category.artists.by_position
+  end
+
 private
 
   def find_category
     @category = Category.find params[:id]
   end
-  
+
 end

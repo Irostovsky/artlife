@@ -16,6 +16,7 @@
           <td><%= raw category.name_by_locale locale %></td>
         <% end -%>
         <td>
+          <%= link_to "Artists", admin_category_path(category) %>
           <%= link_to raw("<i class='icon-pencil'></i>"), edit_admin_category_path(category) %>
           <%= link_to raw("<i class='icon-remove'></i>"), admin_category_path(category), :method => :delete, :confirm => "Are you sure?" %>
         </td>

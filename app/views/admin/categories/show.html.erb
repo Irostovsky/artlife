@@ -1,0 +1,28 @@
+<h3>Category: <%= @category.name %></h3>
+
+<%= link_to "New Artist", new_admin_category_path %>
+<table class="table table-bordered artists">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Country</th>
+      <th>Biography</th>
+      <th>Edit</th>
+    </tr>
+  </thead>
+  <tbody >
+    <% @artists.each do |artist| %>
+      <tr artist-id="<%= artist.id %>">
+        <td>
+          <% Artlife::Application.config.locales.each do |locale| %>
+            <div><%= raw artist.title_by_locale locale %></div>
+          <% end -%>
+        </td>
+        <td><%= raw artist.country %></td>
+        <td><%= raw artist.biography %></td>
+        <td>
+        </td>
+      </tr>
+    <% end -%>
+  </tbody>
+</table>
