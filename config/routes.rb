@@ -14,6 +14,7 @@ Artlife::Application.routes.draw do
     resources :properties, :only => [:index, :update, :edit]
     resources :categories do
       resources :position, :only => [:update], :controller => "category_position"
+      resources :artists
     end
   end
 

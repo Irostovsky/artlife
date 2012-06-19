@@ -1,6 +1,6 @@
 <h3>Category: <%= @category.name %></h3>
 
-<%= link_to "New Artist", new_admin_category_path %>
+<%= link_to "New Artist", new_admin_category_artist_path(@category) %>
 <table class="table table-bordered artists">
   <thead>
     <tr>
