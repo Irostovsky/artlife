@@ -13,11 +13,10 @@ Artlife::Application.routes.draw do
     resources :home, :only => :index
     resources :properties, :only => [:index, :update, :edit]
     resources :categories do
-      resources :position, :only => [:update], :controller => "category_position"
       resources :artists
     end
-    resources :artists do
-      resources :position, :only => [:update], :controller => "artist_position"
+    resources :sortable do
+      resources :position, :only => [:update], :controller => "sortable_position"
     end
 
   end

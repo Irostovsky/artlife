@@ -9,7 +9,7 @@
       <th>Edit</th>
     </tr>
   </thead>
-  <tbody update-order-url = "<%= admin_category_position_path("SORTABLE_ID", "POSITION") %>">
+  <tbody update-order-url = "<%= admin_sortable_position_path("SORTABLE_ID", "POSITION", :class_name => 'Category') %>">
     <% @categories.each do |category| %>
       <tr sortable-id="<%= category.id %>">
         <% Artlife::Application.config.locales.each do |locale| %>

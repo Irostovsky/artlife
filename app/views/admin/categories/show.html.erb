@@ -10,7 +10,7 @@
       <th>Edit</th>
     </tr>
   </thead>
-  <tbody update-order-url = "<%= admin_artist_position_path("SORTABLE_ID", "POSITION") %>">
+  <tbody update-order-url = "<%= admin_sortable_position_path("SORTABLE_ID", "POSITION", :class_name => 'Artist') %>">
     <% @artists.each do |artist| %>
       <tr sortable-id="<%= artist.id %>">
         <td><%= artist.title %></td>
