@@ -16,6 +16,10 @@ Artlife::Application.routes.draw do
       resources :position, :only => [:update], :controller => "category_position"
       resources :artists
     end
+    resources :artists do
+      resources :position, :only => [:update], :controller => "artist_position"
+    end
+
   end
 
   mount Ckeditor::Engine => "/ckeditor"

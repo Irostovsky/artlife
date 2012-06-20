@@ -10,7 +10,7 @@
       <th>Edit</th>
     </tr>
   </thead>
-  <tbody >
+  <tbody update-order-url = "<%= admin_artist_position_path("ARTIST_ID", "POSITION") %>">
     <% @artists.each do |artist| %>
       <tr artist-id="<%= artist.id %>">
         <td><%= artist.title %></td>
