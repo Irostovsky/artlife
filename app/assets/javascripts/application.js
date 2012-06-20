@@ -24,5 +24,5 @@ $(function() {
                                $('meta[name="csrf-token"]').attr('content'));
       }
   });
-  
+
 });

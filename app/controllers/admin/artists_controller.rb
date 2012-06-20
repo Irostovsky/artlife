@@ -1,6 +1,6 @@
 class Admin::ArtistsController < Admin::BaseController
   before_filter :find_category
-  before_filter :find_artist, :only => [:edit, :update, :destroy]
+  before_filter :find_artist, :only => [:edit, :update, :destroy, :show]
 
   def index
     redirect_to admin_category_path @category
@@ -9,11 +9,11 @@ class Admin::ArtistsController < Admin::BaseController
   def new
     @artist = Artist.new(:category => @category)
   end
-  
+
   def create
     @artist = Artist.new params[:artist]
     if @artist.save
-      redirect_to admin_category_path(@category), :notice => 'Artist added.'
+      redirect_to admin_category_artist_path(@category, @artist), :notice => 'Artist added.'
     else
       render :new
     end
@@ -24,7 +24,7 @@ class Admin::ArtistsController < Admin::BaseController
 
   def update
     if @artist.update_attributes params[:artist]
-      redirect_to admin_category_path(@category), :notice => 'Artist updated!'
+      redirect_to admin_category_artist_path(@category, @artist), :notice => 'Artist updated!'
     else
       render :edit
     end
@@ -33,6 +33,9 @@ class Admin::ArtistsController < Admin::BaseController
   def destroy
     @artist.destroy
     redirect_to admin_category_path(@category), :notice => 'Artist deleted!'
+  end
+
+  def show
   end
 
 private

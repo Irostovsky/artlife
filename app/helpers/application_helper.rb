@@ -12,4 +12,8 @@ module ApplicationHelper
     "#{object.new_record? ? 'Create' : 'Edit'} #{object.class.name.downcase}"
   end
 
+  def e params
+    escape_javascript params
+  end
+
 end

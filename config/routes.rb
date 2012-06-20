@@ -20,7 +20,9 @@ Artlife::Application.routes.draw do
     resources :sortable do
       resources :position, :only => [:update], :controller => "sortable_position"
     end
-
+    resources :artists do
+      resources :photos, :only => [:create, :destroy]
+    end
   end
 
   mount Ckeditor::Engine => "/ckeditor"

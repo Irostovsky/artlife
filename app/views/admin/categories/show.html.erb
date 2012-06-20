@@ -17,6 +17,7 @@
         <td><%= raw artist.country %></td>
         <td><%= raw artist.biography %></td>
         <td>
+          <%= link_to 'Show', admin_category_artist_path(@category, artist) %>
           <%= link_to raw("<i class='icon-pencil'></i>"), edit_admin_category_artist_path(@category, artist) %>
           <%= link_to raw("<i class='icon-remove'></i>"), admin_category_artist_path(@category, artist), :method => :delete, :confirm => "Are you sure?" %>
         </td>
