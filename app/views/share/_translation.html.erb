@@ -1,0 +1,7 @@
+<% resource.translations.each do |translation| %>
+  <%= form.fields_for :translations, translation do |translation_form| %>
+    Locale: <b><%= translation.locale %></b>
+    <%= translation_form.hidden_field :locale %>
+    <%= yield translation_form %>
+  <% end %>
+<% end -%>

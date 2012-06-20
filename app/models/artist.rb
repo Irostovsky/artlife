@@ -4,6 +4,7 @@ class Artist < ActiveRecord::Base
 
   translates :biography, :country, :title
   include TranslatedModel
+
   acts_as_list :scope => :category
 
   extend FriendlyId
