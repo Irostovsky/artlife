@@ -3,6 +3,7 @@ class CategoriesController < ApplicationController
   before_filter :find_category
   
   def show
+    @artists = @category.artists.by_position
   end
   
 private

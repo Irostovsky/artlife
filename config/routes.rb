@@ -7,7 +7,9 @@ Artlife::Application.routes.draw do
   match "/categories" => "home#index"
   resources :locales, :only => :update
   devise_for :users
-  resources :categories, :only => :show
+  resources :categories, :only => :show do
+    resources :artists, :only => [:index, :show]
+  end
 
   namespace :admin do
     resources :home, :only => :index

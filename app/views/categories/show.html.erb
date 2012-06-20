@@ -1,1 +1,6 @@
-<%= @category.name %>
+<h3><%= @category.name %></h3>
+<% @artists.each do |artist| %>
+  <div class='artist_wrapper'>
+    <%= link_to artist.title, category_artist_path(@category, artist) %>
+  </div>
+<% end -%>
