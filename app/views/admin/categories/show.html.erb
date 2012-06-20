@@ -1,7 +1,7 @@
 <h3>Category: <%= @category.name %></h3>
 
 <%= link_to "New Artist", new_admin_category_artist_path(@category) %>
-<table class="table table-bordered artists">
+<table class="table table-bordered artists sortable">
   <thead>
     <tr>
       <th>Title</th>
@@ -10,9 +10,9 @@
       <th>Edit</th>
     </tr>
   </thead>
-  <tbody update-order-url = "<%= admin_artist_position_path("ARTIST_ID", "POSITION") %>">
+  <tbody update-order-url = "<%= admin_artist_position_path("SORTABLE_ID", "POSITION") %>">
     <% @artists.each do |artist| %>
-      <tr artist-id="<%= artist.id %>">
+      <tr sortable-id="<%= artist.id %>">
         <td><%= artist.title %></td>
         <td><%= raw artist.country %></td>
         <td><%= raw artist.biography %></td>
