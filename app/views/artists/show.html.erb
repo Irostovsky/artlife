@@ -1,3 +1,13 @@
+<ul class="breadcrumb">
+  <li>
+    <%= link_to 'Art Life', root_path %><span class="divider">>></span>
+  </li>
+  <li>
+    <%= link_to @category.name, category_path(@category) %><span class="divider">>></span>
+  </li>
+  <li class="active"><%= @artist.title %></li>
+</ul>
+
 <%= @artist.title %>(<%= @artist.country %>)
 <%= raw @artist.biography %>
 
