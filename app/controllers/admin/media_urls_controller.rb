@@ -14,6 +14,21 @@ class Admin::MediaUrlsController < Admin::BaseController
     end
   end
 
+  def edit
+    @media_url = @artist.media_urls.find params[:id]
+    render :new
+  end
+
+  def update
+    @media_url = @artist.media_urls.find params[:id]
+    if @media_url.update_attributes params[:media_url]
+      render :update
+    else
+      render :new
+    end
+  end
+
+
   def destroy
     @media_url = @artist.media_urls.find params[:id]
     @media_url.destroy

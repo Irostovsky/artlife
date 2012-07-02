@@ -6,6 +6,7 @@
     <%= item.title %>
   </td>
   <td>
+    <%= link_to "Edit", edit_admin_artist_media_url_path(@artist, item), :remote => true, :class => 'btn btn-primary' %>
     <%= link_to "Delete", admin_artist_media_url_path(@artist, item), :method => :delete, :confirm => "Are you sure?", :remote => true, :class => 'btn btn-danger' %>
   </td>
 </tr>
