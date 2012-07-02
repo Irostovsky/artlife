@@ -18,24 +18,25 @@
   <%= raw @artist.biography %>
 </p>
 
-<div>Photos</div>
-<table class="table table-bordered photos sortable">
-  <thead>
-    <tr>
-      <th>Photo</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody update-order-url = "<%= admin_sortable_position_path("SORTABLE_ID", "POSITION", :class_name => 'Photo') %>">
-    <% @artist.photos.by_position.each do |photo| %>
-      <%= render 'admin/artists/photo_item', :photo => photo %>
-    <% end -%>
-  </tbody>
-</table>
-<div class="upload">
-  <%= image_tag 'ajax-loader.gif', :class => 'loading_photo hide' %>
-  <input id="fileupload" type="file" name="files[]" data-url="<%= admin_artist_photos_path(@artist) %>" multiple>
+<div class="tabbable"> <!-- Only required for left/right tabs -->
+  <ul class="nav nav-tabs">
+    <li class="active"><%= link_to "Photos", "#photos_tab", 'data-toggle' => "tab" %></li>
+    <li><%= link_to "Audio", "#audios_tab", 'data-toggle' => "tab" %></li>
+    <li><%= link_to "Video", "#videos_tab", 'data-toggle' => "tab" %></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="photos_tab">
+      <%= render 'photos_tab_content' %>
+    </div>
+    <div class="tab-pane" id="audios_tab">
+      <%= render 'audios_tab_content' %>
+    </div>
+    <div class="tab-pane" id="videos_tab">
+      Video
+    </div>
+  </div>
 </div>
+
 
 
 </div>
