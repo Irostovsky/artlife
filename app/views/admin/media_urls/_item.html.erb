@@ -1,0 +1,11 @@
+<tr sortable-id="<%= item.id %>">
+  <td>
+    Player will be here
+  </td>
+  <td>
+    <%= item.title %>
+  </td>
+  <td>
+    <%= link_to "Delete", admin_artist_media_url_path(@artist, item), :method => :delete, :confirm => "Are you sure?", :remote => true, :class => 'btn btn-danger' %>
+  </td>
+</tr>

@@ -1,8 +1,8 @@
 class Artist < ActiveRecord::Base
   attr_accessible :biography, :country, :position, :title, :category, :category_id
   belongs_to :category
-  has_many :photos
-  has_many :medias
+  has_many :photos, :dependent => :destroy
+  has_many :media_urls, :dependent => :destroy
 
   translates :biography, :country, :title
   include TranslatedModel

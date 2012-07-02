@@ -76,7 +76,18 @@ ActiveRecord::Schema.define(:version => 20120702070815) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
 
-  create_table "media", :force => true do |t|
+  create_table "media_url_translations", :force => true do |t|
+    t.integer  "media_url_id"
+    t.string   "locale"
+    t.string   "title"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "media_url_translations", ["locale"], :name => "index_media_url_translations_on_locale"
+  add_index "media_url_translations", ["media_url_id"], :name => "index_media_url_translations_on_media_url_id"
+
+  create_table "media_urls", :force => true do |t|
     t.string   "title"
     t.string   "player_url"
     t.string   "kind"
@@ -85,17 +96,6 @@ ActiveRecord::Schema.define(:version => 20120702070815) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  create_table "medium_translations", :force => true do |t|
-    t.integer  "medium_id"
-    t.string   "locale"
-    t.string   "title"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "medium_translations", ["locale"], :name => "index_medium_translations_on_locale"
-  add_index "medium_translations", ["medium_id"], :name => "index_medium_translations_on_medium_id"
 
   create_table "photos", :force => true do |t|
     t.string   "data_file_name"

@@ -1,6 +1,6 @@
 class CreateMediaTranslations < ActiveRecord::Migration
   def up
-    Media.create_translation_table!({
+    MediaUrl.create_translation_table!({
       :title => :string
     }, {
       :migrate_data => true
@@ -8,6 +8,6 @@ class CreateMediaTranslations < ActiveRecord::Migration
   end
 
   def down
-    Media.drop_translation_table! :migrate_data => true
+    MediaUrl.drop_translation_table! :migrate_data => true
   end
 end

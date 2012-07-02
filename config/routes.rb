@@ -22,6 +22,7 @@ Artlife::Application.routes.draw do
     end
     resources :artists do
       resources :photos, :only => [:create, :destroy]
+      resources :media_urls, :except => [:index, :show]
     end
   end
 

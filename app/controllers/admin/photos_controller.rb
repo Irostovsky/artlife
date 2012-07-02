@@ -2,7 +2,7 @@ class Admin::PhotosController < Admin::BaseController
   before_filter :find_artist
   
   def create
-    @photo = Photo.create(:data => params[:files].first, :artist => @artist)
+    @photo = @artist.photos.create(:data => params[:files].first)
   end
 
   def destroy

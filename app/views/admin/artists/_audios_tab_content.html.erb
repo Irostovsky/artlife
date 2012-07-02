@@ -1,1 +1,16 @@
-<p>Howdy, I'm in Section 2.</p>
+<%= link_to "New Audio", new_admin_artist_media_url_path(@artist, :kind => :audio), :class => 'btn btn-success', :remote => true %>
+
+<table class="table table-bordered audios sortable">
+  <thead>
+    <tr>
+      <th>Player</th>
+      <th>Title</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody update-order-url = "<%= admin_sortable_position_path("SORTABLE_ID", "POSITION", :class_name => 'MediaUrl') %>">
+    <% @artist.media_urls.audio.by_position.each do |audio| %>
+      <%= render 'admin/media_urls/item', :item => audio %>
+    <% end -%>
+  </tbody>
+</table>

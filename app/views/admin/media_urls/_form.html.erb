@@ -1,0 +1,13 @@
+<%= form_for [:admin, @artist, @media_url], :remote => true do |f| %>
+  <fieldset>
+    <legend><%= new_edit_legend(@media_url) %></legend>
+    <%= render :layout => "share/translation", :locals => {:resource => @media_url, :form => f } do |translation_form| %>
+      <%= render "share/form_input", :f => translation_form, :resource => @media_url, :input => [:text_field, :title] %>
+    <% end -%>
+    <%= render "share/form_input", :f => f, :resource => @media_url, :input => [:text_field, :player_url] %>
+    <%= f.hidden_field :kind %>
+    <div class="form-actions">
+      <%= f.submit "Save", :class => 'btn btn-primary' %>
+    </div>
+  </fieldset>
+<% end %>

@@ -1,6 +1,6 @@
 class CreateMedia < ActiveRecord::Migration
   def change
-    create_table :media do |t|
+    create_table :media_urls do |t|
       t.string :title
       t.string :player_url
       t.string :kind
