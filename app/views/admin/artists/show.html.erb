@@ -9,6 +9,8 @@
   <li class="active"><%= @artist.title %></li>
 </ul>
 
+<%= link_to "Edit", edit_admin_category_artist_path(@category, @artist), :class => "btn btn-primary" %>
+
 <h4>
   <%= @artist.title %>(<%= @artist.country %>)
 </h4>

@@ -1,6 +1,6 @@
 <h3>Category: <%= @category.name %></h3>
 
-<%= link_to "New Artist", new_admin_category_artist_path(@category) %>
+<%= link_to "New Artist", new_admin_category_artist_path(@category), :class => 'btn btn-success' %>
 <table class="table table-bordered artists sortable">
   <thead>
     <tr>
@@ -17,9 +17,9 @@
         <td><%= raw artist.country %></td>
         <td><%= raw artist.biography %></td>
         <td>
-          <%= link_to 'Show', admin_category_artist_path(@category, artist) %>
-          <%= link_to raw("<i class='icon-pencil'></i>"), edit_admin_category_artist_path(@category, artist) %>
-          <%= link_to raw("<i class='icon-remove'></i>"), admin_category_artist_path(@category, artist), :method => :delete, :confirm => "Are you sure?" %>
+          <%= link_to 'Show', admin_category_artist_path(@category, artist), :class => 'btn btn-info' %>
+          <%= link_to "Edit", edit_admin_category_artist_path(@category, artist), :class => "btn btn-primary" %>
+          <%= link_to "Delete", admin_category_artist_path(@category, artist), :method => :delete, :confirm => "Are you sure?", :class => 'btn btn-danger' %>
         </td>
       </tr>
     <% end -%>

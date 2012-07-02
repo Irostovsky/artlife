@@ -1,6 +1,6 @@
 <tr sortable-id="<%= photo.id %>">
   <td><%= image_tag(photo.data(:preview)) %></td>
   <td>
-    <%= link_to raw("<i class='icon-remove'></i>"), admin_artist_photo_path(@artist, photo), :method => :delete, :confirm => "Are you sure?", :remote => true %>
+    <%= link_to "Delete", admin_artist_photo_path(@artist, photo), :method => :delete, :confirm => "Are you sure?", :remote => true, :class => 'btn btn-danger' %>
   </td>
 </tr>
