@@ -1,2 +1,2 @@
-$(".audios tbody").append("<%= e render 'admin/media_urls/item', :item => @media_url %>");
+$(".<%= @media_url.kind %>s tbody").append("<%= e render 'admin/media_urls/item', :item => @media_url %>");
 $('.media_url_form').modal('hide');

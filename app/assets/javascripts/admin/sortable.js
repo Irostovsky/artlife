@@ -25,5 +25,5 @@ $(function(){
     return false;
   });
 
-  $(".audios .toggle_sorting").click();
+  $(".toggle_sorting").click();
 })

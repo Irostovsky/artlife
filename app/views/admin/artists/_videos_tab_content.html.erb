@@ -1,0 +1,16 @@
+<%= link_to "New Video", new_admin_artist_media_url_path(@artist, :kind => :video), :class => 'btn btn-success', :remote => true %>
+
+<table class="table table-bordered videos sortable">
+  <thead>
+    <tr>
+      <th>Player</th>
+      <th>Title</th>
+      <th>Action <%= link_to "Sorting", "#", :class => 'toggle_sorting btn btn-success' %></th>
+    </tr>
+  </thead>
+  <tbody update-order-url = "<%= admin_sortable_position_path("SORTABLE_ID", "POSITION", :class_name => 'MediaUrl') %>">
+    <% @artist.media_urls.video.by_position.each do |item| %>
+      <%= render 'admin/media_urls/item', :item => item %>
+    <% end -%>
+  </tbody>
+</table>
