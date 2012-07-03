@@ -12,4 +12,18 @@ $(function(){
         });
      }
   });
+
+  $(".toggle_sorting").click(function(){
+    var sortable = $(this).parents('table').find('tbody');
+    if($(this).hasClass('btn-success')){
+      sortable.sortable("disable");
+      $(this).removeClass('btn-success').addClass('btn-danger');
+    }else{
+      sortable.sortable("enable");
+      $(this).removeClass('btn-danger').addClass('btn-success');
+    }
+    return false;
+  });
+
+  $(".audios .toggle_sorting").click();
 })

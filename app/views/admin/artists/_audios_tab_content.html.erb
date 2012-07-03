@@ -5,7 +5,7 @@
     <tr>
       <th>Player</th>
       <th>Title</th>
-      <th>Action</th>
+      <th>Action <%= link_to "Sorting", "#", :class => 'toggle_sorting btn btn-success' %></th>
     </tr>
   </thead>
   <tbody update-order-url = "<%= admin_sortable_position_path("SORTABLE_ID", "POSITION", :class_name => 'MediaUrl') %>">
