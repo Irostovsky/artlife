@@ -17,6 +17,25 @@
   <% end -%>
 </div>
 
+<div>
+  <div><%= t(:audio) %></div>
+  <% @artist.media_urls.audio.by_position.each do |item| %>
+    <div class='media_item'>
+      <embed src="<%= item.player_url %>" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque" width="280" height='200'></embed>
+      <div><%= item.title %></div>
+    </div>
+  <% end -%>
+</div>
+<div>
+  <div><%= t(:video) %></div>
+  <% @artist.media_urls.video.by_position.each do |item| %>
+    <div class='media_item'>
+      <embed src="<%= item.player_url %>" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque" width="280" height='200'></embed>
+      <div><%= item.title %></div>
+    </div>
+  <% end -%>
+</div>
+
 <!-- modal-gallery is the modal dialog used for the image gallery -->
 <div id="modal-gallery" class="modal modal-gallery hide fade">
     <div class="modal-header">
