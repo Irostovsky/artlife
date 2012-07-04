@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120702070815) do
+ActiveRecord::Schema.define(:version => 20120704072441) do
 
   create_table "artist_translations", :force => true do |t|
     t.integer  "artist_id"
@@ -93,6 +93,23 @@ ActiveRecord::Schema.define(:version => 20120702070815) do
     t.string   "kind"
     t.integer  "position"
     t.integer  "artist_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "news_event_translations", :force => true do |t|
+    t.integer  "news_event_id"
+    t.string   "locale"
+    t.text     "content"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "news_event_translations", ["locale"], :name => "index_news_event_translations_on_locale"
+  add_index "news_event_translations", ["news_event_id"], :name => "index_news_event_translations_on_news_event_id"
+
+  create_table "news_events", :force => true do |t|
+    t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
