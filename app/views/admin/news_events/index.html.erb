@@ -4,6 +4,7 @@
 <table class="table table-bordered news_events">
   <thead>
     <tr>
+      <th>Created At</th>
       <th>Preview</th>
       <th>Actions</th>
     </tr>
@@ -11,7 +12,10 @@
   <tbody>
     <% @items.each do |item| %>
       <tr>
-        <td><%= raw item.content %></td>
+        <td><%= item.created_at.to_date.to_s(:date) %></td>
+        <td>
+          <%= truncate strip_tags(item.content.html_safe), :length => 200 %>
+        </td>
         <td>
           <%= link_to "Edit", edit_admin_news_event_path(item), :class => "btn btn-primary" %>
           <%= link_to "Delete", admin_news_event_path(item), :method => :delete, :confirm => "Are you sure?", :class => "btn btn-danger" %>
