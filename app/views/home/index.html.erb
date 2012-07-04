@@ -1,2 +1,14 @@
 <%= t :about_us %>
 <%= property(:about_us_page) %>
+<%= t :news %>
+<% @news_events.each do |event| %>
+  <div class='news_event'>
+    <div><%= event.created_at.to_date.to_s(:date) %></div>
+    <div class='preview'>
+      <%= truncate strip_tags(event.content.html_safe), :length => 200 %>
+      <%= link_to t(:read_more), "#", :class => "read_more" %>
+    </div>
+    <div class='full_text hide'><%= event.content.html_safe %></div>
+    <div class='clear'></div>
+  </div>
+<% end -%>
