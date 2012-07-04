@@ -1,0 +1,22 @@
+<h3>News Events</h3>
+
+<%= link_to "New event", new_admin_news_event_path, :class => 'btn btn-success' %>
+<table class="table table-bordered news_events">
+  <thead>
+    <tr>
+      <th>Preview</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= raw item.content %></td>
+        <td>
+          <%= link_to "Edit", edit_admin_news_event_path(item), :class => "btn btn-primary" %>
+          <%= link_to "Delete", admin_news_event_path(item), :method => :delete, :confirm => "Are you sure?", :class => "btn btn-danger" %>
+        </td>
+      </tr>
+    <% end -%>
+  </tbody>
+</table>

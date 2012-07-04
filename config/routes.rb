@@ -24,6 +24,7 @@ Artlife::Application.routes.draw do
       resources :photos, :only => [:create, :destroy]
       resources :media_urls, :except => [:index, :show]
     end
+    resources :news_events, :except => :show
   end
 
   mount Ckeditor::Engine => "/ckeditor"

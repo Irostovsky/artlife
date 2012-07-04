@@ -1,0 +1,12 @@
+<%= form_for [:admin, @news_event] do |f| %>
+  <fieldset>
+    <legend><%= new_edit_legend(@news_event) %></legend>
+    <%= render :layout => "share/translation", :locals => {:resource => @news_event, :form => f } do |translation_form| %>
+      <%= render "share/form_input", :f => translation_form, :resource => @news_event, :input => [:cktext_area, :content]%>
+    <% end -%>
+    <div class="form-actions">
+      <%= f.submit "Save", :class => 'btn btn-primary' %>
+      <%= link_to "Cancel", admin_news_events_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>
