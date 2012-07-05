@@ -1,5 +1,4 @@
 # encoding: utf-8
-require 'FileUtils'
 
 [User, Property, Category].each do |model|
   model.destroy_all
