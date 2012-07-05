@@ -10,6 +10,12 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
+class DreamLogFormatter < Logger::Formatter
+  def call(severity, time, progname, msg)
+    "[%s(%d)%5s] %s\n" % [time.to_s(:short), $$, severity, msg2str(msg)]
+  end
+end
+
 module Artlife
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -61,5 +67,8 @@ module Artlife
     config.assets.version = '1.0'
     config.assets.precompile += Ckeditor.assets
     config.locales = [:en, :cn]
+    config.logger = Logger.new(Rails.root.join('log', "#{Rails.env}.log"), 10, 30*1024*1024)
+    config.logger.formatter = DreamLogFormatter.new
+
   end
 end
