@@ -12,8 +12,38 @@
  *= require_self
  */
 
-body{
-  padding-top: 0px;
+@import "mixins/helpers";
+@import "partials/header";
+@import "partials/top_menu";
+@import "partials/bottom_menu";
+
+body {
+  .font-smoothing(none);
+  color: @text;
+  font-family: @font;
+
+  letter-spacing: .08em;
+  padding: 0;
+
+  ::selection {
+    background: @a;
+    color: @text;
+  }
+  ::-moz-selection {
+    background: @a;
+    color: @text;
+  }
+}
+.layout {
+  margin: 0 auto;
+  width: @width;
+}
+
+a {
+  &, &:hover, &:active {
+    color: @a;
+    text-decoration: underline;
+  }
 }
 
 table.sortable{

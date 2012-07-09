@@ -1,0 +1,72 @@
+@import "mixins/helpers";
+
+.header {
+  .gradient (#0e0e0e, #131313);
+  color: @title;
+  height: 80px;
+  width: 100%;
+
+  h1 {
+    font-family: @another-font;
+    font-size: 40px;
+    font-weight: normal;
+    letter-spacing: .08em;
+    a {
+      text-decoration: none;
+    }
+  }
+
+  p {
+    margin: 0;    
+
+    &.logo {
+      letter-spacing: .18em;    
+    }
+    strong {
+      font-size: 18px;
+      font-weight: normal;
+    }
+  }
+
+  .layout {
+    > div {
+      padding-top: 10px;
+    }
+
+    .locale-and-links {
+      padding-top: 0;
+      text-align: right;
+
+      > a, > span {
+        .inline-block;        
+        padding: 5px 10px;
+      }
+      > a {
+        color: #fff;
+      }
+      > span {
+        .border-radius (0 0 5px 5px);
+        background: @a;
+        color: @text;
+      }
+
+      > div {
+        margin-top: 15px;
+
+        span {
+          background: url('/assets/ico-links.png') 0 0 no-repeat;
+          margin-left: 20px;
+          padding: 3px 0 3px 25px;
+
+          &.icq-name {
+            background-position: 0 -3px;
+          }
+
+          &.skype-name {
+            background-position: 0 -39px;
+          }
+        }        
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@a: #ff7800;
+@text: #000;
+@title: #7b7a7a;
+@bg-title: #7b7a7a;
+
+@width: 960px;
+
+@font: Arial, Helvetica, sans-serif;
+@another-font: Times New Roman, Times, serif;
+
+.gradient (@from, @to) {
+  background-color: @from;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(@from), to(@to));
+  background-image: -webkit-linear-gradient(top, @from, @to);
+  background-image:    -moz-linear-gradient(top, @from, @to);
+  background-image:      -o-linear-gradient(top, @from, @to);
+  background-image:         linear-gradient(to bottom, @from, @to);
+}
+
+.border-radius (@radius) {
+  -webkit-border-radius: @radius;
+          border-radius: @radius;
+}
+
+.inline-block {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
+
+.transition (@property, @time) {
+  transition: @property @time;
+  -moz-transition: @property @time;
+  -webkit-transition: @property @time;
+  -o-transition: @property @time;  
+}
+
+.font-smoothing (@property) {
+  font-smoothing: @property;
+  -moz-font-smoothing: @property;
+  -webkit-font-smoothing: @property;
+  -o-font-smoothing: @property;
+}

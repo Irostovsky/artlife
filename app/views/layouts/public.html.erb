@@ -1,22 +1,24 @@
 <%= render :layout => 'layouts/base' do %>
   <%= render 'share/admin_menu' if current_user %>
-  <div class="header row">
-    <div class="span4">
-      <h1><%= link_to "Art Life", root_path %></h1>
-      <p>Time art in our life</p>
-    </div>
-    <div class="span4">
-      <%= property(:contacts) %>
-    </div>
-    <div class="span4">
-      <%= locale_switcher(:cn) %>
-      <%= locale_switcher(:en) %>
-      <div class="row">
-        <div class="span2">
-          <%= property(:icq_name) %>
-        </div>
-        <div class="span2">
-          <%= property(:skype_name) %>
+  <div class="header">
+    <div class="layout row">
+      <div class="span3">
+        <h1><%= link_to "Art Life", root_path %></h1>
+        <p class="logo">Time art in our life</p>
+      </div>
+      <div class="span3">
+        <%= property(:contacts) %>
+      </div>
+      <div class="span3 locale-and-links">
+        <%= locale_switcher(:cn) %>
+        <%= locale_switcher(:en) %>
+        <div>
+          <span class="icq-name">
+            <%= property(:icq_name) %>
+          </span>
+          <span class="skype-name">
+            <%= property(:skype_name) %>
+          </span>
         </div>
       </div>
     </div>
@@ -25,6 +27,10 @@
   <%= render 'share/flash_message', :content => alert, :clazz => 'alert alert-error' %>
 
   <%= render 'share/top_menu' %>
-  <%= yield %>
+
+  <div class="layout">
+    <%= yield %>
+  </div>
+
   <%= render 'share/bottom_menu' %>
 <% end -%>

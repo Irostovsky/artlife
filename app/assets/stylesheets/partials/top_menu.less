@@ -1,0 +1,47 @@
+@import "mixins/helpers";
+
+.top_menu {
+  .gradient (#535252, #1e1e1e);
+  border-bottom: 1px solid #cfcfcf;
+  height: 70px;
+  width: 100%;
+
+  .layout {
+    height: 70px;
+    
+    a {
+      .inline-block;
+      font-size: 16px;
+      height: 70px;
+      line-height: 70px;
+      margin-right: 50px;
+      text-shadow: 1px 1px 2px @text;
+      vertical-align: middle;
+
+      &.current {
+        color: #fff;
+        position: relative;
+
+        &:hover {
+          font-size: 16px;
+        }          
+        &:after {
+          bottom: -36px;
+          color: #fff;
+          content: '◆';
+          font-family: serif;
+          font-size: 25px;
+          left: 50%;
+          margin-left: -10px;
+          position: absolute;
+          text-shadow: none;
+        }
+      }
+
+      &:hover {
+        .transition(font-size, 0.5s);
+        font-size: 20px;
+      }
+    }
+  }
+}
