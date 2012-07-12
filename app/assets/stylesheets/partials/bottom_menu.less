@@ -1,16 +1,53 @@
 @import "mixins/helpers";
 
+.main {
+  padding-bottom: 60px;
+}
+
 .bottom_menu {
+
   .gradient (#4e4e4e, #1f1f1f);
+  bottom: 0;
   border-bottom: 1px solid #707070;
   height: 45px;
+  position: absolute;
   width: 100%;
+
+  .logo {
+    display: inline-block;
+    margin-right: 40px;
+
+    h1 {
+      line-height: 22px;
+      padding-top: 7px;
+
+      a {
+        color: @a;
+        font-family: @another-font;
+        font-size: 22px;
+        font-weight: normal;
+        letter-spacing: .08em;
+        line-height: 22px;
+        text-decoration: none;
+      }
+    }
+
+    p {
+      color: @title;
+      font-size: 8px;
+      line-height: 8px;
+      margin: 0;
+    }
+
+  }
 
   a {
     color: #fff;
+    display: inline-block;
     font-size: 12px;
     line-height: 45px;
     margin-right: 20px;
+    vertical-align: top;
 
     &:hover, &:active {
       color: #fff;      

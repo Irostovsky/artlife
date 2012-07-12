@@ -13,17 +13,22 @@
  */
 
 @import "mixins/helpers";
-@import "partials/header";
-@import "partials/top_menu";
-@import "partials/bottom_menu";
 
+* {
+  margin: 0;
+  padding: 0;
+}
+html {height: 100%;}
+* html body {height: 100%;}
 body {
   .font-smoothing(none);
   color: @text;
   font-family: @font;
 
   letter-spacing: .08em;
+  min-height: 100%;
   padding: 0;
+  position: relative;
 
   ::selection {
     background: @a;
