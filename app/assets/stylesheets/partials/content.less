@@ -1,0 +1,61 @@
+@import "mixins/helpers";
+
+.content {
+  font-size: @font-size;
+  padding: 20px 0;
+
+  .breadcrumb {
+    border: 0;
+    background: none;
+    padding: 0;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  section {
+    border-left: 1px solid @bg-title;
+
+    header {
+      h1 {
+        .border-radius (0 5px 5px 0);
+        background: @bg-title;
+        color: #fff;
+        display: inline-block;
+        font-size: @font-size;
+        line-height: 18px;
+        padding: 5px 0 5px 40px;
+        width: 140px;
+      }      
+    }
+
+    article {
+      margin: 20px 40px;
+
+      h1 {
+        font-size: 22px;
+        font-weight: normal;
+
+        span {
+          font-size: 15px;
+        }
+      }
+
+      .date {
+        font-weight: bold;
+      }
+
+      .preview {
+        a {
+          color: @link;
+          text-decoration: underline;
+        }        
+      }
+    }
+  }
+
+  .media_item {
+    margin: 10px 10px 10px 0;
+  }
+}

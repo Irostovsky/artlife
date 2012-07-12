@@ -8,33 +8,61 @@
   <li class="active"><%= @artist.title %></li>
 </ul>
 
-<%= @artist.title %>(<%= @artist.country %>)
-<%= raw @artist.biography %>
+<section>
+  <header>
+    <h1>Biography</h1>
+  </header>
+  <article>
+    <h1>
+      <%= @artist.title %>
+      <span>(<%= @artist.country %>)</span>
+    </h1>
+    <%= raw @artist.biography %>
+  </article>
+</section>
 
-<div id="gallery" data-toggle="modal-gallery" data-target="#modal-gallery">
-  <% @artist.photos.by_position.each do |photo| %>
-    <%= link_to image_tag(photo.data.url(:thumb)), photo.data.url(:content), :rel => 'gallery', :title => @artist.title %>
-  <% end -%>
-</div>
+<section>
+  <header>
+    <h1>Gallery</h1>
+  </header>
+  <article>
+    <div id="gallery" data-toggle="modal-gallery" data-target="#modal-gallery">
+      <% @artist.photos.by_position.each do |photo| %>
+        <%= link_to image_tag(photo.data.url(:thumb)), photo.data.url(:content), :rel => 'gallery', :title => @artist.title %>
+      <% end -%>
+    </div>
+  </article>
+</section>
 
-<div>
-  <div><%= t(:audio) %></div>
-  <% @artist.media_urls.audio.by_position.each do |item| %>
-    <div class='media_item'>
-      <embed src="<%= item.player_url %>" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque" width="280" height='200'></embed>
-      <div><%= item.title %></div>
-    </div>
-  <% end -%>
-</div>
-<div>
-  <div><%= t(:video) %></div>
-  <% @artist.media_urls.video.by_position.each do |item| %>
-    <div class='media_item'>
-      <embed src="<%= item.player_url %>" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque" width="280" height='200'></embed>
-      <div><%= item.title %></div>
-    </div>
-  <% end -%>
-</div>
+<section>
+  <header>
+    <h1><%= t(:audio) %></h1>
+  </header>
+  <article>
+    <% @artist.media_urls.audio.by_position.each do |item| %>
+      <div class='media_item'>
+        <embed src="<%= item.player_url %>"
+          type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque" width="280" height='200'></embed>
+        <div><%= item.title %></div>
+      </div>
+      <% end -%>
+  </article>
+</section>
+
+<section>
+  <header>
+    <h1><%= t(:video) %></h1>
+  </header>
+  <article>
+    <% @artist.media_urls.video.by_position.each do |item| %>
+      <div class='media_item'>
+        <embed src="<%= item.player_url %>"
+          type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque" width="280" height='200'></embed>
+        <div><%= item.title %></div>
+      </div>
+    <% end -%>
+  </article>
+</section>
 
 <!-- modal-gallery is the modal dialog used for the image gallery -->
 <div id="modal-gallery" class="modal modal-gallery hide fade">

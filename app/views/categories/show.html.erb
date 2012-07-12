@@ -1,9 +1,13 @@
-<h3><%= @category.name %></h3>
-<% @artists.each do |artist| %>
-  <div class='artist_wrapper'>
-    <div>
-      <%= link_to image_tag(main_photo(artist)), category_artist_path(@category, artist) %>
-    </div>
-    <%= link_to artist.title, category_artist_path(@category, artist) %>
-  </div>
-<% end -%>
+<section>
+  <header>
+    <h1><%= @category.name %></h1>
+  </header>
+  <% @artists.each do |artist| %>
+    <article class='artist_wrapper'>
+      <div>
+        <%= link_to image_tag(main_photo(artist)), category_artist_path(@category, artist) %>
+      </div>
+      <%= link_to artist.title, category_artist_path(@category, artist) %>
+    </article>
+  <% end -%>
+</section>

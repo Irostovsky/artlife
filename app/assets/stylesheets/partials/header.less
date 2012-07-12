@@ -6,12 +6,19 @@
   height: 80px;
   width: 100%;
 
+  a {
+    &, &:hover, &:active {
+      color: @a;
+      text-decoration: underline;
+    }
+  }
+
   h1 {
     font-family: @another-font;
     font-size: 40px;
     font-weight: normal;
     letter-spacing: .08em;
-    a {
+    a, a:hover {
       text-decoration: none;
     }
   }
@@ -30,12 +37,15 @@
 
   .layout {
     > div {
+      margin: 0;
       padding-top: 10px;
+      width: 280px;
     }
 
     .locale-and-links {
       padding-top: 0;
       text-align: right;
+      width: 340px;
 
       > a, > span {
         .inline-block;        
