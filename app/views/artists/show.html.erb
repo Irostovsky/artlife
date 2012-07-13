@@ -8,31 +8,33 @@
   <li class="active"><%= @artist.title %></li>
 </ul>
 
-<section>
-  <header>
-    <h1>Biography</h1>
-  </header>
-  <article>
-    <h1>
-      <%= @artist.title %>
-      <span>(<%= @artist.country %>)</span>
-    </h1>
-    <%= raw @artist.biography %>
-  </article>
-</section>
-
-<section>
-  <header>
-    <h1>Gallery</h1>
-  </header>
-  <article>
-    <div id="gallery" data-toggle="modal-gallery" data-target="#modal-gallery">
-      <% @artist.photos.by_position.each do |photo| %>
+<div class="artist_column">
+  <section>
+    <header>
+      <h1>Gallery</h1>
+    </header>
+    <article>
+      <div id="gallery" data-toggle="modal-gallery" data-target="#modal-gallery">
+        <% @artist.photos.by_position.each do |photo| %>
         <%= link_to image_tag(photo.data.url(:thumb)), photo.data.url(:content), :rel => 'gallery', :title => @artist.title %>
-      <% end -%>
-    </div>
-  </article>
-</section>
+        <% end -%>
+      </div>
+    </article>
+  </section>
+
+  <section class="biograpfy">
+    <header>
+      <h1>Biography</h1>
+    </header>
+    <article>
+      <h1>
+        <%= @artist.title %>
+        <span>(<%= @artist.country %>)</span>
+      </h1>
+      <%= raw @artist.biography %>
+    </article>
+  </section>
+</div>
 
 <section>
   <header>
