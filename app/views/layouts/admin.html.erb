@@ -2,8 +2,9 @@
 
   <%= render 'share/admin_menu' %>
 
-  <%= render 'share/flash_message', :content => notice, :clazz => 'alert alert-success' %>
-  <%= render 'share/flash_message', :content => alert, :clazz => 'alert alert-error' %>
-
-  <%= yield %>
+  <div class='layout'>
+    <%= render 'share/flash_message', :content => notice, :clazz => 'alert alert-success' %>
+    <%= render 'share/flash_message', :content => alert, :clazz => 'alert alert-error' %>
+    <%= yield %>
+  </div>
 <% end -%>

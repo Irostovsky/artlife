@@ -23,12 +23,11 @@
       </div>
     </div>
   </div>
-  <%= render 'share/flash_message', :content => notice, :clazz => 'alert alert-success' %>
-  <%= render 'share/flash_message', :content => alert, :clazz => 'alert alert-error' %>
-
   <%= render 'share/top_menu' %>
 
   <div class="content layout">
+    <%= render 'share/flash_message', :content => notice, :clazz => 'alert alert-success' %>
+    <%= render 'share/flash_message', :content => alert, :clazz => 'alert alert-error' %>
     <%= yield %>
   </div>
 
